@@ -1,5 +1,3 @@
 package diagnostics
 
-fun example() {
-    val x = 0
-}
+fun example() = 5 <!USELESS_CAST!>as Int<!>

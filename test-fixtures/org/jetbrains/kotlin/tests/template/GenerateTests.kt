@@ -2,6 +2,7 @@ package org.jetbrains.kotlin.tests.template
 
 import org.jetbrains.kotlin.generators.generateTestGroupSuiteWithJUnit5
 import org.jetbrains.kotlin.test.builders.TestConfigurationBuilder
+import org.jetbrains.kotlin.test.directives.DiagnosticsDirectives.RENDER_DIAGNOSTICS_FULL_TEXT
 import org.jetbrains.kotlin.test.directives.JvmEnvironmentConfigurationDirectives
 import org.jetbrains.kotlin.test.runners.AbstractFirLightTreeDiagnosticsTest
 import org.jetbrains.kotlin.test.services.EnvironmentBasedStandardLibrariesPathProvider
@@ -21,6 +22,8 @@ abstract class AbstractFirLightTreeTemplateDiagnosticsTest : AbstractFirLightTre
 fun TestConfigurationBuilder.commonFirWithPluginFrontendConfiguration() {
     defaultDirectives {
         +JvmEnvironmentConfigurationDirectives.FULL_JDK
+
+        +RENDER_DIAGNOSTICS_FULL_TEXT
     }
 }
 
